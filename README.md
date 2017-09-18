@@ -1,7 +1,23 @@
-# CarND-Controls-PID
-Self-Driving Car Engineer Nanodegree Program
+# Controls-PID Project
+In this project implemented a PID controller in C++ to maneuver the vehicle around the track!
+The simulator provided the cross track error (CTE) and the velocity (mph) in order to compute the appropriate steering angle and throttle position. Two actuator variables throttle and steering are controlled in PID.
 
-- Two actuator variables throttle and steering to control using PID 
+# PID parameter tuning
+Total error is calculated with three parameters as shown below. With difference of demand and actual value.
+```
+  Error = Kp * p_error + Kd * d_error + Ki * i_error
+```
+If the error and **kp** is too high, the car starts to oscillate and it cannot converge.
+
+In other hand, small **ki** leads to less accumulated error over time. The integral term seeks to eliminate the error by contributing a control effect due to the historic and present cumulative value of the error.
+
+Finally, the **kd** coefficient needs to be the large in order to detect rapid oscillations in the CTE that could represent curves in the road.
+```
+- Final 
+Kp = 0.1
+Ki = 0.008
+Kd = 3
+```
 ---
 
 ## Dependencies
