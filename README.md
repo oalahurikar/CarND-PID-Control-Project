@@ -13,7 +13,7 @@ In other hand, small **ki** leads to less accumulated error over time. The integ
 
 Finally, the **kd** coefficient needs to be the large in order to detect rapid oscillations in the CTE that could represent curves in the road.
 ```
-- Final 
+- Final Parameters 
 Kp = 0.1
 Ki = 0.008
 Kd = 3
